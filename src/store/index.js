@@ -19,14 +19,14 @@ export default new Vuex.Store({
           title: card.fields.image.title,
           uuid: card.fields.image.uuid,
           isFlipped: false,
-          isMatched: false
+          isMatched: null
         }
       })
     }
   },
   actions: {
     fetchDataCards({commit}) {
-      const url = 'https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=5'
+      const url = 'https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=15'
       axios.get(url)
       .then(res => {
         if (res.status === 200) {

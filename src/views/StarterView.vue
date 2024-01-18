@@ -1,6 +1,8 @@
 <template>
   <div>
-    <starter-component v-show="!player" @setPlayer="setPlayer"/>
+    <div class="flex justify-center">
+      <starter-component v-show="!player" @setPlayer="setPlayer"/>
+    </div>
     <div class="mx-auto max-w-3xl px-4 py-4 sm:px-6 sm:py-4 lg:max-w-7xl lg:px-8 flex justify-evenly">
       <head-component v-show="player" :name="name" :counters="score"/>
       <div class="flex-col w-1/4" style="display: flex">

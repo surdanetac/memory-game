@@ -32,17 +32,18 @@ export default {
     checkMatchCards () {
       const indexCard1 = this.cardsSelected[0]
       const indexCard2 = this.cardsSelected[1]
-      if (this.cards[indexCard1].uuid === this.cards[indexCard2].uuid) {
+      if (this.cards[indexCard1].uuid === this.cards[indexCard2].uuid && indexCard1 !== indexCard2) {
         [indexCard1, indexCard2].map(index => (this.cards[index].isMatched = true))
-        // this.cards[indexCard1].isMatched = true
-        // this.cards[indexCard2].isMatched = true
         this.$emit('updateScore', 'success')
       } else {
-        [indexCard1, indexCard2].map(index => (this.cards[index].isFlipped = false))
-        // this.cards[indexCard1].isFlipped = false
-        // this.cards[indexCard2].isFlipped = false
+        [indexCard1, indexCard2].map(index => this.cards[index].isMatched = false)
+        setTimeout(() => {
+          [indexCard1, indexCard2].map(index => {
+            this.cards[index].isFlipped = false
+            this.cards[index].isMatched = null
+          })
+        }, 1000)
         this.$emit('updateScore', 'error')
-
       }
       this.cardsSelected = []
     }
