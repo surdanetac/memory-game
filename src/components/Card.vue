@@ -34,14 +34,10 @@ export default {
 }
 </script>
 <style scoped>
-  .no-flipped {
-    background-color: aqua !important;
-  }
-  .card {
-  border-radius: 5px;
+.card {
+  transition: transform 0.5s;
   transform: rotateY(180deg);
   animation: 2s hideCard linear;
-  transition: transform 0.5s;
 }
 @keyframes hideCard{
   0%, 70%{
@@ -64,7 +60,6 @@ export default {
     transform: scale(0);
   }
 }
-
 .card.active{
   transform: rotateY(0);
 }

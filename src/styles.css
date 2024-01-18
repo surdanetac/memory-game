@@ -13,7 +13,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   text-align: center;
-  background-color: bisque;
+  background-image: url('./assets/animals-group-2.jpeg');
+  background-size: cover;
+  background-position: center;
 }
 
 h1,
@@ -55,3 +57,5 @@ h5 {
   margin-top: 5px;
   font-weight: 600;
 }
+
+

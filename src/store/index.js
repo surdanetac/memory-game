@@ -26,7 +26,7 @@ export default new Vuex.Store({
   },
   actions: {
     fetchDataCards({commit}) {
-      const url = 'https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=15'
+      const url = 'https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=10'
       axios.get(url)
       .then(res => {
         if (res.status === 200) {
